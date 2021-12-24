@@ -1,0 +1,757 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*/
+
+@font-face {
+    font-family: Hanken;
+    font-weight: 700;
+    src: url(../fonts/HankenGrotesk-Bold.woff2);
+}
+@font-face {
+    font-family: Hanken;
+    font-weight: 500;
+    src: url(../fonts/HankenGrotesk-Medium.woff2);
+}
+@font-face {
+    font-family: MaterialIcons;
+    src: url(../fonts/MaterialIcons-Regular.woff2);
+}
+/*Common css start*/
+html {
+  scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+button:focus, a:focus{
+    outline: none;
+}
+ul{
+    list-style: none;
+    margin-bottom: 0;
+}
+body{
+    font-family: "Hanken",Arial,sans-serif;
+    font-weight: 500;
+    width: 100%;
+    overflow-x: hidden;
+}
+body::before {
+  content: "";
+  background: #4e2e50;
+  opacity: .5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
+/*Scrollbar*/
+body::-webkit-scrollbar-track
+{
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: #00ab4b;
+}
+section{
+    width: 100%;
+    padding: 50px 0px;
+}
+p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    line-height: 22px;
+    color: #373d48;
+}
+h1, h2, h3, h4, h5, h6, span {
+    color: #000000;
+}
+
+
+
+
+/*Animate Label css start*/
+.animate-label label {
+    left: 23px;
+}
+.animate-label-outer label{
+    color: #e0e0e0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.animate-label-row input:focus{
+    outline: 0;
+    box-shadow: none;
+    border-color: #ffffff!important;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+}
+.animate-label .select2-container .select2-selection--single,
+.animate-label-row input,
+.animate-label-row select{
+    border-radius: 0;
+    height: 56px!important;
+    background: transparent;
+}
+.animate-label.not-required label {
+    animation: none!important;
+}
+
+.animate-label.not-required input {
+    border-color: #ced4da!important;
+}
+.animate-label .select2-container--default .select2-selection--single .select2-selection__placeholder{
+    color: #beb0c2;
+}
+.animate-label label {
+    position: absolute;
+    z-index: -1;
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    top: 18px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: unset;
+    padding: 0 5px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    left: 8px;
+    margin-bottom: 0;
+    color: #beb0c2;
+}
+.animate-label .filled + label {
+    transition: none;
+}
+.animate-label .filled + label {
+    opacity: 0!important;
+    z-index: -1111!important;
+}
+.animate-label.focus-out select,
+.animate-label.focus-out textarea,
+.animate-label.focus-out input {
+    border-color: #ffffff!important;
+    font-size: 20px;
+    background: transparent;
+    color: #ffffff;
+}
+.animate-label.fixed-label label {
+    top: -11px!important;
+    /* color: #00ab4b!important; */
+    z-index: 11111!important;
+    background: #ffffff!important;
+    user-select: none;
+    font-size: 13px;
+}
+.animate-label.focus-out label{
+    -webkit-animation: v-shake .6s cubic-bezier(.25,.8,.5,1);
+    animation: v-shake .6s cubic-bezier(.25,.8,.5,1);
+    /*color: red;*/
+}
+.animate-label.label-fixed label {
+    top: -11px!important;
+    z-index: 11111!important;
+    background: #ffffff!important;
+    font-size: 13px!important;
+}
+@-webkit-keyframes v-shake {
+  59% {
+    margin-left: 0;
+  }
+  60%,80% {
+    margin-left: 2px;
+  }
+  70%,90% {
+    margin-left: -2px;
+  }
+}
+
+@keyframes v-shake {
+  59% {
+    margin-left: 0;
+  }
+  60%,80% {
+    margin-left: 2px;
+  }
+  70%,90% {
+    margin-left: -2px;
+  }
+}
+.animate-label .filled {
+    /* background: #ffffff!important; */
+    border-color: #ced4da!important;
+}
+.animate-label {
+    position: relative;
+}
+.animate-label textarea,
+.animate-label input {
+    background: transparent;
+    border: 1px solid #beb0c2;
+    color: #ffffff;
+    border-radius: 0;
+}
+.animate-label textarea:focus, 
+.animate-label input:focus{
+    outline: 0;
+    box-shadow: none;
+    background: transparent;
+    border-color: #ffffff!important;
+    color: #ffffff;
+    font-size: 20px;
+}
+.animate-label .filled + label,
+.animate-label select:focus + label,
+.animate-label textarea:focus + label,
+.animate-label input:focus + label{
+    color: #61336e;
+    top: 100%;
+    left: 0;
+    z-index: 111;
+    background: #ffffff;
+    animation: none;
+    font-size: 1em;
+    width: 100%;
+    padding: 10px 10px;
+    height: auto;
+}
+.animate-label[class*="col-"] label, 
+.animate-label[class*="col-"] .filled + label, 
+.animate-label[class*="col-"] select:focus + label,
+.animate-label[class*="col-"] textarea:focus + label, 
+.animate-label[class*="col-"] input:focus + label{
+    left: 23px;
+}
+/*Animate Label css end*/
+
+
+/*Form Section CSS start*/
+.form-main-section {}
+
+.form-main-section .heading {}
+
+.form-main-section .heading .title {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 0.13em 0 0.16em;
+    margin: 0;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.form-main-section p,.form-main-section p * {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.form-main-section p a {
+    text-decoration: underline;
+}
+.animate-label .select2.select2-container * {
+    background: transparent;
+}
+
+.animate-label .select2-selection.select2-selection--single {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 20px;
+    border: 1px solid #beb0c2;
+}
+.animate-label .select2-selection.select2-selection--single .select2-selection__rendered{
+    color: #beb0c2;
+}
+.image-outer {
+    position: relative;
+    border: 1px solid #beb0c2;
+    padding: .7em;
+}
+
+.image-outer .title {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    font-size: 20px;
+    color: #beb0c2;
+}
+
+.image-outer input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.image-info-wrapper {
+    display: flex;
+}
+
+.image-info-wrapper h2 {
+    font-size: 20px;
+    width: 50%;
+    color: #beb0c2;
+    font-weight: 600;
+}
+
+.image-info-wrapper h2 span {
+    display: block;
+    color: #beb0c2;
+    font-weight: 500;
+}
+.choice-input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choice-input-wrapper .choice-input {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: 6px 0;
+}
+
+.choice-input-wrapper .choice-input input {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.choice-input-wrapper .choice-input label {
+    margin-bottom: 0;
+    text-transform: unset;
+    font-size: 17px;
+    font-weight: 300;
+}
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-footer {
+    margin-top: 70px;
+}
+
+.form-actions .sweet-btn {
+    font-size: 20px;
+    font-weight: 800;
+    color: #4e2e50;
+    border: 0;
+    background: #ffffff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.form-actions .sweet-btn i {
+    margin-left: 25px;
+    font-size: 25px;
+}
+.form-actions .sweet-btn.form-tab-prev {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.form-actions .sweet-btn:hover {
+    background: #ffffff;
+    color: #4e2e50;
+}
+.form-tab-item-outer {
+    width: 100%;
+    display: block;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    opacity: .4;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.form-tab-item-outer:hover {
+    opacity: 1;
+}
+.form-tab-item .number {
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    display: flex;
+    font-size: 20px;
+    margin-right: 10px;
+    border-radius: 100%;
+    color: #000000;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-tab-item .text small {
+    color: #ddd;
+    width: 100%;
+    display: block;
+    font-size: 17px;
+}
+
+.form-tab-item * {
+    color: #ffffff;
+}
+
+.form-tab-inner {
+    backdrop-filter: blur(15px);
+    position: relative;
+}
+
+.form-tab-item * {
+    color: #ffffff;
+}
+
+.form-tab-item-outer.active {
+    opacity: 1;
+}
+.form-tab-item-outer .required-ip-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form-tab-item-outer .required-ip-wrapper .reqiured-ip {
+    height: 2px;
+    width: 100%;
+    background: #c6c6c6;
+    margin: 1px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.form-tab-item-outer .required-ip-wrapper .reqiured-ip:hover{
+    background: #fff;
+    height: 3px;
+}
+.form-tab-inner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #ffffff1a;
+    z-index: -1;
+}
+
+.form-tab-item .text {
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.form-tab-item {
+    display: flex;
+    align-items: center;
+}
+/*Form Section CSS end*/
+
+
+/*File Upload CSS Start*/
+.image-prev-wrapper img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-prev-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.img-prev-info {
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+.img-prev-info .title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.img-prev-info .size {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.image-box.upload.not-selected .image-prev-wrapper {
+    display: none;
+}
+
+.image-box.upload.selected .image-select-outer {
+    display: none;
+}
+.remove-img-btn {
+    position: absolute;
+    right: 22px;
+    top: 13px;
+    background: #ffffff;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    z-index: 999;
+    cursor: pointer;
+}
+/*File Upload CSS End*/
+
+
+/*Multi Checkbox CSS Start*/
+.check-input {
+    padding: 5px;
+    position: relative;
+    border: 2px solid #beb0c2;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.check-input label {
+    padding: 10px;
+    margin-bottom: 0!important;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
+
+.check-input input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.check-input input:checked ~ label:before {
+    transform: scale(1);
+}
+.check-input label:before {
+    content: '';
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 8px;
+    z-index: -1;
+    transform: scale(0);
+    transition: all .3s ease;
+}
+.check-input input:checked ~ label {
+    color: #4e2e50;
+}
+/*Multi Checkbox CSS End*/
+
+
+/*User Rating CSS Start*/
+
+.user-rating-star-input fieldset,
+.user-rating-star-input label {
+  margin: 0;
+  padding: 0;
+}
+
+.user-rating-star-input .rating {
+  border: none;
+  float: left;
+  margin-bottom: 15px;
+}
+
+.user-rating-star-input .rating>input {
+  opacity: 0;
+  position: absolute;
+  z-index: -11111;
+}
+
+.user-rating-star-input .rating>label:before {
+    margin: 2px;
+    font-size: 30px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    content: "\f005";
+}
+/*\f005*/
+.user-rating-star-input .rating>.half:before {
+    content: "\f005";
+    position: absolute;
+    width: 17px;
+    overflow: hidden;
+}
+
+.user-rating-star-input .rating>label {
+  color: #b2b2b2;
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 5px;
+  position: relative;
+}
+
+.user-rating-star-input .rating>input:checked~label,
+.user-rating-star-input .rating:not(:checked)>label:hover,
+.user-rating-star-input .rating:not(:checked)>label:hover~label {
+  color: #ffffff;
+  content: "\f005";
+}
+
+.user-rating-star-input .rating>input:checked+label:hover,
+.user-rating-star-input .rating>input:checked~label:hover,
+.user-rating-star-input .rating>label:hover~input:checked~label,
+.user-rating-star-input .rating>input:checked~label:hover~label {
+  color: #ffffff;
+}
+.user-rating-star-input .rating>label:after {
+    content: attr(data-val);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+/*User Rating CSS End*/
+
+
+/*Sweet Switch CSS Start*/
+.sweet-switch .switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin-right: 14px;
+  margin-top: 4px;
+}
+
+.sweet-switch .switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sweet-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sweet-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sweet-switch input:checked + .slider {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.sweet-switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.sweet-switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.sweet-switch .slider.round {
+  border-radius: 34px;
+}
+
+.sweet-switch .slider.round:before {
+  border-radius: 50%;
+}
+.sweet-switch input:checked + .slider:before {
+    background-color: #4e2e50;
+}
+
+.sweet-switch .slider.round:after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: transparent;
+    font-size: 13px;
+    position: absolute;
+    cursor: pointer;
+    top: 1px;
+    left: 4px;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.sweet-switch input:checked + .slider:after {
+    color: #4e2e50;
+}
+.sweet-switch {
+    display: flex;
+    align-items: flex-start;
+}
+
+.sweet-switch .msg {
+    margin-bottom: 0;
+    line-height: 1.3;
+    font-size: 19px;
+}
+/*Sweet Switch CSS End*/

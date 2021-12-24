@@ -14,8 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/step-two', function () {
+    return view('steps.two');
+})->name('stepTwo');
+Route::get('/step-three', function () {
+    return view('steps.three');
+})->name('stepThree');
+Route::get('/step-four', function () {
+    return view('steps.four');
+})->name('stepFour');
 
 Auth::routes();
 
